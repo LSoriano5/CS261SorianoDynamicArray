@@ -64,15 +64,15 @@ class TestDynamicArray(unittest.TestCase):
 
     # # # Tip: If you haven't gotten this to pass within two minutes, comment it out
     # # # and move on.
-    # def test_append_two_values(self):
-    #     """
-    #     Test 6: Two values can be appended to and retrieved from a dynamic array.
-    #     """
-    #     a = DynamicArray()
-    #     a.append(18)
-    #     a.append(16)
-    #     self.assertEqual(18, a[0])
-    #     self.assertEqual(16, a[1])
+    def test_append_two_values(self):
+        """
+        Test 6: Two values can be appended to and retrieved from a dynamic array.
+        """
+        a = DynamicArray()
+        a.append(18)
+        a.append(16)
+        self.assertEqual(18, a[0])
+        self.assertEqual(16, a[1])
 
     # # """
     # # Guiding internal data storage, with a static array
