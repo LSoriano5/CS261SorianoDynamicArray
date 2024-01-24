@@ -23,6 +23,9 @@ class DynamicArray:
        self.data[self.size] = value
        self.size += 1
 
+       if self.size == 1:
+          self.next_index = 1
+
     def __getitem__(self,index):
        if 0 <= index < len(self.data):
         return self.data[index]
@@ -30,6 +33,10 @@ class DynamicArray:
     def next_index(self,value):
        self.next_index = value
        return self.next_index
+    
+    def clear(self):
+       self.size = 0
+       self.next_index = 0
        
     
 
