@@ -29,14 +29,13 @@ class TestDynamicArray(unittest.TestCase):
          """
         a = DynamicArray()
         self.assertEqual(10, a.capacity)
-        
 
-    # def test_initially_empty(self):
-    #     """
-    #     Test 3: A dynamic array is initially empty.
-    #     """
-    #     a = DynamicArray()
-    #     self.assertTrue(a.is_empty())
+    def test_initially_empty(self):
+        """
+        Test 3: A dynamic array is initially empty.
+        """
+        a = DynamicArray()
+        self.assertTrue(a.is_empty())
 
     # def test_initial_length(self):
     #     """

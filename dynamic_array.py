@@ -7,4 +7,7 @@ class DynamicArray:
       self.data = []
       self.size = 0
       self.capacity = 10
+    
+    def is_empty(self):
+       return self.size == 0
 
