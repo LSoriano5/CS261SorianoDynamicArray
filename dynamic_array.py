@@ -19,12 +19,14 @@ class DynamicArray:
     
     def append(self,value):
        if self.size == len(self.data):
-         self.data = np.resize(self.data, 2 * len(self.data))
+            self.resize_and_copy()
+
        self.data[self.size] = value
        self.size += 1
 
        if self.size == 1:
-          self.next_index = 1
+            self.next_index = 1
+
 
     def __getitem__(self,index):
        if index < 0 or index >= self.size:
@@ -62,6 +64,9 @@ class DynamicArray:
         self.data = np.insert(self.data, index, value)
 
         self.size += 1
+
+    def is_full(self):
+       return self.size == len(self.data)
        
     
 

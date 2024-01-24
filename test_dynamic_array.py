@@ -411,48 +411,48 @@ class TestDynamicArray(unittest.TestCase):
     # Fullness
     # """
 
-    # def test_empty_not_full(self):
-    #     """
-    #     Test 34: An empty dynamic array is not full.
-    #     """
-    #     a = DynamicArray()
-    #     self.assertFalse(a.is_full())
+    def test_empty_not_full(self):
+        """
+        Test 34: An empty dynamic array is not full.
+        """
+        a = DynamicArray()
+        self.assertFalse(a.is_full())
 
-    # def test_less_than_capacity(self):
-    #     """
-    #     Test 35: A dynamic array with a number of elements less than capacityis not full.
-    #     """
-    #     a = DynamicArray()
-    #     a.append('fee')
-    #     a.append('fi')
-    #     self.assertTrue(len(a) < a.capacity)
-    #     self.assertFalse(a.is_full())
+    def test_less_than_capacity(self):
+        """
+        Test 35: A dynamic array with a number of elements less than capacityis not full.
+        """
+        a = DynamicArray()
+        a.append('fee')
+        a.append('fi')
+        self.assertTrue(len(a) < a.capacity)
+        self.assertFalse(a.is_full())
 
-    # def test_full(self):
-    #     """
-    #     Test 36: A dynamic array is full when the number of elements fills its internal data array
-    #     """
-    #     a = DynamicArray()
-    #     for _ in range(0, a.capacity):
-    #         a.append('fake')
-    #     self.assertEqual(10, len(a))
-    #     self.assertEqual(10, a.next_index)
-    #     self.assertEqual(len(a), a.capacity)
-    #     self.assertTrue(a.is_full())
+    def test_full(self):
+        """
+        Test 36: A dynamic array is full when the number of elements fills its internal data array
+        """
+        a = DynamicArray()
+        for _ in range(0, a.capacity):
+            a.append('fake')
+        self.assertEqual(10, len(a))
+        self.assertEqual(10, a.next_index)
+        self.assertEqual(len(a), a.capacity)
+        self.assertTrue(a.is_full())
 
     # """
     # Increasing capacity
     # """
 
-    # def test_append_to_full(self):
-    #     """
-    #     Test 37: A full dynamic array expands to accommodate a new appended element.
-    #     """
-    #     a = DynamicArray()
-    #     for _ in range(0, a.capacity):
-    #         a.append('fake')
-    #     a.append('new value')
-    #     self.assertEqual('new value', a[10])
+    def test_append_to_full(self):
+        """
+        Test 37: A full dynamic array expands to accommodate a new appended element.
+        """
+        a = DynamicArray()
+        for _ in range(0, a.capacity):
+            a.append('fake')
+        a.append('new value')
+        self.assertEqual('new value', a[10])
 
     # def test_new_capacity(self):
     #     """
