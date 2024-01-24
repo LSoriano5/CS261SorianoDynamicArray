@@ -54,6 +54,14 @@ class DynamicArray:
           self.data[i] = self.data[i+1]
           
        self.size -=1
+
+    def insert(self, index, value):
+        if index < 0 or index > self.size:
+            raise IndexError
+        
+        self.data = np.insert(self.data, index, value)
+
+        self.size += 1
        
     
 

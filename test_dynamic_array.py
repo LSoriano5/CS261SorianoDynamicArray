@@ -340,72 +340,72 @@ class TestDynamicArray(unittest.TestCase):
     # # Basic insertion
     # # """
 
-    # def test_insert_end(self):
-    #     """
-    #     Test 29: Inserting after the last element adds the element to the end of the array.
-    #     """
-    #     a = DynamicArray()
-    #     a.append('fee')
-    #     a.append('fi')
-    #     a.append('fo')
-    #     a.insert(3, 'funk')
-    #     self.assertEqual(4, len(a))
-    #     self.assertEqual('fo', a[2])
-    #     self.assertEqual('funk', a[3])
+    def test_insert_end(self):
+        """
+        Test 29: Inserting after the last element adds the element to the end of the array.
+        """
+        a = DynamicArray()
+        a.append('fee')
+        a.append('fi')
+        a.append('fo')
+        a.insert(3, 'funk')
+        self.assertEqual(4, len(a))
+        self.assertEqual('fo', a[2])
+        self.assertEqual('funk', a[3])
 
-    # def test_insert_invalid_index(self):
-    #     """
-    #     Test 30: Inserting an out of bounds index raises an IndexError: index out of range.
-    #     """
-    #     a = DynamicArray()
-    #     a.append('fee')
-    #     a.append('fi')
-    #     a.append('fo')
-    #     try:
-    #         a.insert(4, 'this is more than the next available index')
-    #         a.insert(-1, 'this is less than the first index')
-    #         self.fail("Did not raise IndexError: index out of range.")
-    #     except IndexError:
-    #         pass
+    def test_insert_invalid_index(self):
+        """
+        Test 30: Inserting an out of bounds index raises an IndexError: index out of range.
+        """
+        a = DynamicArray()
+        a.append('fee')
+        a.append('fi')
+        a.append('fo')
+        try:
+            a.insert(4, 'this is more than the next available index')
+            a.insert(-1, 'this is less than the first index')
+            self.fail("Did not raise IndexError: index out of range.")
+        except IndexError:
+            pass
 
-    # def test_insert_first(self):
-    #     """
-    #     Test 31: Inserting a new first element shifts remaining elements to the right.
-    #     """
-    #     a = DynamicArray()
-    #     a.append('fee')
-    #     a.append('fi')
-    #     a.append('fo')
-    #     a.insert(0, 'foo')
-    #     self.assertEqual(4, len(a))
-    #     self.assertEqual('foo', a[0])
-    #     self.assertEqual('fee', a[1])
-    #     self.assertEqual('fi', a[2])
-    #     self.assertEqual('fo', a[3])
+    def test_insert_first(self):
+        """
+        Test 31: Inserting a new first element shifts remaining elements to the right.
+        """
+        a = DynamicArray()
+        a.append('fee')
+        a.append('fi')
+        a.append('fo')
+        a.insert(0, 'foo')
+        self.assertEqual(4, len(a))
+        self.assertEqual('foo', a[0])
+        self.assertEqual('fee', a[1])
+        self.assertEqual('fi', a[2])
+        self.assertEqual('fo', a[3])
 
-    # def test_insert_middle(self):
-    #     """
-    #     Test 32: Inserting into the middle shifts elements to the right, to the right.
-    #     """
-    #     a = DynamicArray()
-    #     a.append('fee')
-    #     a.append('fi')
-    #     a.append('fo')
-    #     a.insert(1, 'foo')
-    #     self.assertEqual(4, len(a))
-    #     self.assertEqual('fee', a[0])
-    #     self.assertEqual('foo', a[1])
-    #     self.assertEqual('fi', a[2])
-    #     self.assertEqual('fo', a[3])
+    def test_insert_middle(self):
+        """
+        Test 32: Inserting into the middle shifts elements to the right, to the right.
+        """
+        a = DynamicArray()
+        a.append('fee')
+        a.append('fi')
+        a.append('fo')
+        a.insert(1, 'foo')
+        self.assertEqual(4, len(a))
+        self.assertEqual('fee', a[0])
+        self.assertEqual('foo', a[1])
+        self.assertEqual('fi', a[2])
+        self.assertEqual('fo', a[3])
 
-    # def test_insert_empty(self):
-    #     """
-    #     Test 33: Inserting into an empty array at position 0 is ok.
-    #     """
-    #     a = DynamicArray()
-    #     a.insert(0, 'foo')
-    #     self.assertEqual(1, len(a))
-    #     self.assertEqual('foo', a[0])
+    def test_insert_empty(self):
+        """
+        Test 33: Inserting into an empty array at position 0 is ok.
+        """
+        a = DynamicArray()
+        a.insert(0, 'foo')
+        self.assertEqual(1, len(a))
+        self.assertEqual('foo', a[0])
 
     # """
     # Fullness
