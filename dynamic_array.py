@@ -13,4 +13,11 @@ class DynamicArray:
     
     def __len__(self):
        return self.size
+    
+    def append(self,value):
+       self.data.append(value)
+
+    def __getitem__(self,index):
+       if self.data and 0 <= index < len(self.data):
+        return self.data[index]
 
