@@ -78,71 +78,71 @@ class TestDynamicArray(unittest.TestCase):
     # # Guiding internal data storage, with a static array
     # # """
 
-    # def test_data_property(self):
-    #     """
-    #     Test 7: Has an internal `data` property that is a numpy ndarray.
-    #     """
-    #     import numpy as np # Hint: Get an error? Just `pip3 install numpy`
-    #     a = DynamicArray()
-    #     self.assertEqual(np.ndarray, type(a.data))
+    def test_data_property(self):
+        """
+        Test 7: Has an internal `data` property that is a numpy ndarray.
+        """
+        import numpy as np # Hint: Get an error? Just `pip3 install numpy`
+        a = DynamicArray()
+        self.assertEqual(np.ndarray, type(a.data))
 
-    # def test_data_object_references(self):
-    #     """
-    #     Test 8: Internal data array stores object references.
-    #     """
-    #     import numpy as np # Hint: Get an error? Just `pip3 install numpy`
-    #     a = DynamicArray()
-    #     self.assertEqual('O', a.data.dtype)
+    def test_data_object_references(self):
+        """
+        Test 8: Internal data array stores object references.
+        """
+        import numpy as np # Hint: Get an error? Just `pip3 install numpy`
+        a = DynamicArray()
+        self.assertEqual('O', a.data.dtype)
 
-    # def test_data_capacity(self):
-    #     """
-    #     Test 9: Length of the data array is the same as the DynamicArray capacity.
-    #     """
-    #     import numpy as np # Hint: Get an error? Just `pip3 install numpy`
-    #     a = DynamicArray()
-    #     self.assertEqual(len(a.data), a.capacity)
+    def test_data_capacity(self):
+        """
+        Test 9: Length of the data array is the same as the DynamicArray capacity.
+        """
+        import numpy as np # Hint: Get an error? Just `pip3 install numpy`
+        a = DynamicArray()
+        self.assertEqual(len(a.data), a.capacity)
 
     # # """
     # # Guiding appending and retrieving one value.
     # # """
 
-    # def test_append_first_value_to_internal_data(self):
-    #     """
-    #     Test 10: Appending the first value in an empty DynamicArray puts it in the right
-    #     location in the internal data array.
-    #     """
-    #     a = DynamicArray()
-    #     a.append(99)
-    #     self.assertEqual(99, a.data[0])
+    def test_append_first_value_to_internal_data(self):
+        """
+        Test 10: Appending the first value in an empty DynamicArray puts it in the right
+        location in the internal data array.
+        """
+        a = DynamicArray()
+        a.append(99)
+        self.assertEqual(99, a.data[0])
 
-    # def test_retrieve_first_appended_value(self):
-    #     """
-    #     Test 11: The first element appended to the DynamicArray is can be retrieved with
-    #     index 0.
-    #     """
-    #     a = DynamicArray()
-    #     a.append(100)
-    #     self.assertEqual(a[0], a.data[0])
-    #     self.assertEqual(100, a[0])
+    def test_retrieve_first_appended_value(self):
+        """
+        Test 11: The first element appended to the DynamicArray is can be retrieved with
+        index 0.
+        """
+        a = DynamicArray()
+        a.append(100)
+        self.assertEqual(a[0], a.data[0])
+        self.assertEqual(100, a[0])
 
     # # """
     # # Guiding appending and retrieving two values.
     # # """
 
-    # def test_next_index(self):
-    #     """
-    #     Test 12: Has a next_index property, which is initially 0.
-    #     """
-    #     a = DynamicArray()
-    #     self.assertEqual(0, a.next_index)
+    def test_next_index(self):
+        """
+        Test 12: Has a next_index property, which is initially 0.
+        """
+        a = DynamicArray()
+        self.assertEqual(0, a.next_index)
 
-    # def test_next_index_append(self):
-    #     """
-    #     Test 13: After appending the first value, next_index becomes 1.
-    #     """
-    #     a = DynamicArray()
-    #     a.append('FAKE')
-    #     self.assertEqual(1, a.next_index)
+    def test_next_index_append(self):
+        """
+        Test 13: After appending the first value, next_index becomes 1.
+        """
+        a = DynamicArray()
+        a.append('FAKE')
+        self.assertEqual(1, a.next_index)
 
     # def test_appending_two_values_internal(self):
     #     """

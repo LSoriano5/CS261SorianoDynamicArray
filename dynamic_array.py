@@ -2,11 +2,14 @@
 # Your implementation should pass the tests in test_dynamic_array.py.
 # Leonardo Soriano
 
+import numpy as np
+
 class DynamicArray:
     def __init__(self):
-      self.data = []
+      self.data = np.empty(10, dtype = object) 
       self.size = 0
       self.capacity = 10
+      self.next_index = 0
     
     def is_empty(self):
        return self.size == 0
@@ -15,9 +18,20 @@ class DynamicArray:
        return self.size
     
     def append(self,value):
-       self.data.append(value)
+       if self.size == len(self.data):
+         self.data = np.resize(self.data, 2 * len(self.data))
+       self.data[self.size] = value
+       self.size += 1
 
     def __getitem__(self,index):
-       if self.data and 0 <= index < len(self.data):
+       if 0 <= index < len(self.data):
         return self.data[index]
+       
+    def next_index(self,value):
+       self.next_index = value
+       return self.next_index
+       
+    
+
+
 
