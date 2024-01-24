@@ -1,6 +1,10 @@
 # DynamicArray: An array that grows to accommodate new elements.
 # Your implementation should pass the tests in test_dynamic_array.py.
-# YOUR NAME
+# Leonardo Soriano
 
-class FixMe:
-    pass
+class DynamicArray:
+    def __init__(self):
+      self.data = []
+      self.size = 0
+      self.capacity = 10
+
