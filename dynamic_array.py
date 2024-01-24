@@ -27,8 +27,9 @@ class DynamicArray:
           self.next_index = 1
 
     def __getitem__(self,index):
-       if 0 <= index < len(self.data):
-        return self.data[index]
+       if index < 0 or index >= self.size:
+           raise IndexError
+       return self.data[index]
        
     def next_index(self,value):
        self.next_index = value
@@ -37,6 +38,22 @@ class DynamicArray:
     def clear(self):
        self.size = 0
        self.next_index = 0
+
+    def pop(self):
+       if self.size == 0:
+           raise IndexError
+       last_element = self.data[self.size - 1]
+       self.size -= 1
+       return last_element
+    
+    def delete(self, index):
+       if not (0 <= index < self.size):
+          raise IndexError
+       
+       for i in range(index, self.size - 1):
+          self.data[i] = self.data[i+1]
+          
+       self.size -=1
        
     
 

@@ -230,111 +230,111 @@ class TestDynamicArray(unittest.TestCase):
         except IndexError:
             pass
 
-    # def test_large_index(self):
-    #     """
-    #     Test 21: Accessing with an index greater than or equal to the last index raises an IndexError
-    #     """
-    #     a = DynamicArray()
-    #     try:
-    #         a[100]
-    #         self.fail("Did not raise IndexError: index out of range.")
-    #     except IndexError:
-    #         pass
+    def test_large_index(self):
+        """
+        Test 21: Accessing with an index greater than or equal to the last index raises an IndexError
+        """
+        a = DynamicArray()
+        try:
+            a[100]
+            self.fail("Did not raise IndexError: index out of range.")
+        except IndexError:
+            pass
 
     # # """
     # # Removing elements from the end
     # # """
 
-    # def test_pop(self):
-    #     """
-    #     Test 22: Popping removes and returns the last element
-    #     """
-    #     a = DynamicArray()
-    #     a.append('fee')
-    #     a.append('fi')
-    #     a.append('fo')
-    #     last_element = a.pop()
-    #     self.assertEqual('fo', last_element)
-    #     self.assertEqual(2, len(a))
+    def test_pop(self):
+        """
+        Test 22: Popping removes and returns the last element
+        """
+        a = DynamicArray()
+        a.append('fee')
+        a.append('fi')
+        a.append('fo')
+        last_element = a.pop()
+        self.assertEqual('fo', last_element)
+        self.assertEqual(2, len(a))
 
-    # def test_pop_empty(self):
-    #     """
-    #     Test 23: Popping from an empty list raises an IndexError: pop from empty array
-    #     """
-    #     a = DynamicArray()
-    #     try:
-    #         a.pop()
-    #         self.fail("Did not raise IndexError: index out of range.")
-    #     except IndexError:
-    #         pass
+    def test_pop_empty(self):
+        """
+        Test 23: Popping from an empty list raises an IndexError: pop from empty array
+        """
+        a = DynamicArray()
+        try:
+            a.pop()
+            self.fail("Did not raise IndexError: index out of range.")
+        except IndexError:
+            pass
 
     # # """
     # # Deleting
     # # """
 
-    # def test_delete_last(self):
-    #     """
-    #     Test 24: Deleting the last element removes it from the dynamic array.
-    #     """
-    #     a = DynamicArray()
-    #     a.append('fee')
-    #     a.append('fi')
-    #     a.append('fo')
-    #     a.delete(2)
-    #     self.assertEqual(2, len(a))
-    #     self.assertEqual('fi', a.pop())
+    def test_delete_last(self):
+        """
+        Test 24: Deleting the last element removes it from the dynamic array.
+        """
+        a = DynamicArray()
+        a.append('fee')
+        a.append('fi')
+        a.append('fo')
+        a.delete(2)
+        self.assertEqual(2, len(a))
+        self.assertEqual('fi', a.pop())
 
-    # def test_delete_invalid_index(self):
-    #     """
-    #     Test 25: Deleting an out of bounds index raises an IndexError: index out of range
-    #     """
-    #     a = DynamicArray()
-    #     a.append('fee')
-    #     a.append('fi')
-    #     a.append('fo')
-    #     try:
-    #         a.delete(3)
-    #         a.delete(-1)
-    #         self.fail("Did not raise IndexError: index out of range.")
-    #     except IndexError:
-    #         pass
+    def test_delete_invalid_index(self):
+        """
+        Test 25: Deleting an out of bounds index raises an IndexError: index out of range
+        """
+        a = DynamicArray()
+        a.append('fee')
+        a.append('fi')
+        a.append('fo')
+        try:
+            a.delete(3)
+            a.delete(-1)
+            self.fail("Did not raise IndexError: index out of range.")
+        except IndexError:
+            pass
 
-    # def test_delete_first(self):
-    #     """
-    #     Test 26: Deleting the first element shifts remaining elements to the left.
-    #     """
-    #     a = DynamicArray()
-    #     a.append('fee')
-    #     a.append('fi')
-    #     a.append('fo')
-    #     a.delete(0)
-    #     self.assertEqual(2, len(a))
-    #     self.assertEqual('fi', a[0])
-    #     self.assertEqual('fo', a[1])
+    def test_delete_first(self):
+        """
+        Test 26: Deleting the first element shifts remaining elements to the left.
+        """
+        a = DynamicArray()
+        a.append('fee')
+        a.append('fi')
+        a.append('fo')
+        a.delete(0)
+        self.assertEqual(2, len(a))
+        self.assertEqual('fi', a[0])
+        self.assertEqual('fo', a[1])
 
-    # def test_delete_middle(self):
-    #     """
-    #     Test 27: Deleting from the middle shifts remaining elements to the left.
-    #     """
-    #     a = DynamicArray()
-    #     a.append('fee')
-    #     a.append('fi')
-    #     a.append('fo')
-    #     a.delete(1)
-    #     self.assertEqual(2, len(a))
-    #     self.assertEqual('fee', a[0])
-    #     self.assertEqual('fo', a[1])
+    def test_delete_middle(self):
+        """
+        Test 27: Deleting from the middle shifts remaining elements to the left.
+        """
+        a = DynamicArray()
+        a.append('fee')
+        a.append('fi')
+        a.append('fo')
+        a.delete(1)
+        self.assertEqual(2, len(a))
+        self.assertEqual('fee', a[0])
+        self.assertEqual('fo', a[1])
 
-    # def test_delete_empty(self):
-    #     """
-    #     Test 28: Deleting from an empty array raises an IndexError: index out of range
-    #     """
-    #     a = DynamicArray()
-    #     try:
-    #         a.delete(0)
-    #         self.fail("Did not raise IndexError: index out of range.")
-    #     except IndexError:
-    #         pass
+    def test_delete_empty(self):
+        """
+        Test 28: Deleting from an empty array raises an IndexError: index out of range
+        """
+        a = DynamicArray()
+        try:
+            a.delete(0)
+            self.fail("Did not raise IndexError: index out of range.")
+        except IndexError:
+            pass
 
     # # """
     # # Basic insertion
